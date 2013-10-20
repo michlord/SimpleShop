@@ -1,0 +1,9 @@
+<h1>Associate product with category</h1>
+
+<%= form_tag do %>
+  <%= label_tag(:products, "Product name:") %>
+  <%= select_tag(:products, options_for_select(@products.to_a.map {|x| x.name})) %><br/>
+  <%= label_tag(:category_name, "Category name:") %>
+  <%= select_tag(:category_name, options_for_select(@categories.to_a.map {|x| x.name})) %><br/>
+  <%= submit_tag("Join") %>
+<% end %>
