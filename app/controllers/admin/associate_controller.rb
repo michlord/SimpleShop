@@ -1,4 +1,4 @@
-class AssociateController < ApplicationController
+class Admin::AssociateController < Admin::AdminController
   def index
     @products = Product.all
     @categories = Category.all
@@ -9,6 +9,6 @@ class AssociateController < ApplicationController
     if product != nil and category != nil
       product.categories << category
     end
-    redirect_to associate_path
+    redirect_to admin_associate_path
   end
 end
